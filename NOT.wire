@@ -1,0 +1,15 @@
+Inputs: in;
+Outputs: out;
+
+// 1. specify the components you want to use here
+Parts: 
+  n NAND;
+
+// 2. wire them up
+Wires: 
+  in -> n.in1,
+  in -> n.in2,
+  n.out -> out;
+
+
+// press CTRL + ENTER to start verification process

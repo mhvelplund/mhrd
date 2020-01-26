@@ -1,0 +1,14 @@
+spec: 16-Bit X-Or Specification
+=========================
+
+Description:
+------------
+The XOR16B element is a bus version of the XOR gate. It applies the XOR-operation to each pair of bits from both inputs.  
+
+
+Interface Specification:
+------------------------
+Inputs: in1[16], in2[16];
+Outputs: out[16];
+completed: true
+custom: false

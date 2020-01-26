@@ -1,0 +1,30 @@
+Inputs: carryIn, in1, in2;
+Outputs: out, carryOut;
+
+// 1. specify the components you want to use here
+Parts: 
+  xor XOR,
+  nxor NOT,
+  omux MUX,
+  and AND,
+  or OR,
+  cmux MUX;
+
+// 2. wire them up
+Wires: 
+  in1 -> xor.in1,
+  in2 -> xor.in2,
+  xor.out -> nxor.in,
+  carryIn -> omux.sel,
+  xor.out -> omux.in1,
+  nxor.out -> omux.in2,
+  omux.out -> out,
+
+  in1 -> and.in1,
+  in2 -> and.in2,
+  in1 -> or.in1,
+  in2 -> or.in2,
+  carryIn  -> cmux.sel,
+  and.out  -> cmux.in1,
+  or.out   -> cmux.in2,
+  cmux.out -> carryOut;

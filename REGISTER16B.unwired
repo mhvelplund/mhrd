@@ -1,0 +1,13 @@
+spec: 16-Bit Register Specification
+=============================
+
+Description:
+------------
+The REG16B is a bus version of the REG element.
+
+Interface Specification:
+------------------------
+Inputs: in[16], load;
+Outputs: out[16];
+completed: true
+custom: false

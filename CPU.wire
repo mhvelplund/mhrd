@@ -1,0 +1,36 @@
+Inputs: instr[16], data[16], reset;
+Outputs: write, dataAddr[16], instrAddr[16], result[16];
+Parts:
+  d DECODER,alu ALU16B,lmr MUX16B,lalu MUX16B,mr REGISTER16B,ar REGISTER16B,
+  pc COUNTER16B,z AND,op2m MUX4W16B;
+Wires:
+  instr->d.instr,
+  d.cToM->lmr.sel,
+  alu.out->lmr.in1,
+  d.constant->lmr.in2[1:15],
+  lmr.out->mr.in,
+  d.loadM->mr.load,
+  d.loadA->ar.load,
+  alu.out->ar.in,
+  d.loadD->write,
+  d.opCode->alu.opCode,
+  d.op1->lalu.sel,
+  ar.out->lalu.in1,
+  d.constant[1:5]->lalu.in2[1:5],
+  d.constant[5]->lalu.in2[6:16],
+  lalu.out->alu.in1,
+  d.constant[1:5]->op2m.in1[1:5],
+  d.constant[5]->op2m.in1[6:16],
+  ar.out->op2m.in2,
+  mr.out->op2m.in3,
+  data->op2m.in4,
+  d.op2->op2m.sel,
+  op2m.out->alu.in2,
+  alu.zero->z.in1,
+  d.jmpIfZ->z.in2,
+  z.out->pc.load,
+  mr.out->pc.in,
+  alu.out->result,
+  mr.out->dataAddr,
+  pc.out->instrAddr,
+  reset->pc.reset;

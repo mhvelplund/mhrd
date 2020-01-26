@@ -1,0 +1,20 @@
+spec: Microhard 16-Bit Algorithmic Logic Unit Specification
+=====================================================
+
+Description:
+------------
+The ALU16B element has two data bus inputs and an operation code bus input. The element can perform 16 different operations on the data inputs and writes the result to the data bus output. The operation to perform is determined by the value of the operation code bus. Additionally the ALU has flags to indicate whether the final result is zero or negative
+Each bit in the operation code bus has a dedicated function:
+opCode[4] -> if 1: negate in1 bitwise
+opCode[3] -> if 1: negate in2 bitwise
+opCode[2] -> if 0: out = (in1 ADD in2); if 1: out = (in1 NAND in2);
+opCode[1] -> if 1: negate out bitwise
+Through the negation of the inputs and outputs in combination with the application of the add- and nand-functions, a lot of results can be achieved as can be seen in the examples.
+
+
+Interface Specification:
+------------------------
+Inputs: in1[16], in2[16], opCode[4];
+Outputs: out[16], negative, zero;
+completed: true
+custom: false

@@ -1,0 +1,14 @@
+spec: 16-Bit Multiplexer Specification
+================================
+
+Description:
+------------
+The MUX16B element is a bus version of the MUX gate. It transfers the complete data of the input busses to the output bus, but otherwise behaves identically. 
+
+
+Interface Specification:
+------------------------
+Inputs: in1[16], in2[16], sel;
+Outputs: out[16];
+completed: true
+custom: false

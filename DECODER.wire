@@ -1,0 +1,29 @@
+Inputs: instr[16];
+Outputs: cToM, loadA, loadD, loadM, op1, op2[2], opCode[4], jmpIfZ, constant[15];
+Parts: 
+  load DEMUX4W,
+  cToMMux MUX,
+  loadAMux MUX,
+  loadDMux MUX,
+  loadMMux MUX,
+  jmpIfZMux MUX;
+
+// 2. wire them up
+Wires: 
+  instr[1:15]  -> constant,
+  instr[7:10]  -> opCode,
+  instr[11:12] -> op2,
+  instr[13]    -> op1,
+  instr[6]      -> jmpIfZMux.in1, instr[16] -> jmpIfZMux.sel,
+  jmpIfZMux.out -> jmpIfZ,
+  1           -> cToMMux.in2, instr[16] -> cToMMux.sel,
+  cToMMux.out -> cToM,
+  1 -> load.in, instr[14:15] -> load.sel,
+  load.out2 -> loadAMux.in1, instr[16] -> loadAMux.sel,
+  loadAMux.out -> loadA,
+  load.out4 -> loadDMux.in1, instr[16] -> loadDMux.sel,
+  loadDMux.out -> loadD,
+  load.out3 -> loadMMux.in1, instr[16] -> loadMMux.sel,
+  1 -> loadMMux.in2,
+  loadMMux.out -> loadM
+  ;

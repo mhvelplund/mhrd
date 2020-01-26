@@ -1,0 +1,25 @@
+// Broken?
+Inputs: in[4], load, reset;
+Outputs: out[4];
+Parts:
+  inMux MUX4B,
+  resetMux MUX4B,
+  incMux MUX4B,
+  incOr OR,
+  incAdd ADDER4B,
+  reg REGISTER4B;
+Wires:
+  reg.out -> inMux.in1,
+  in      -> inMux.in2,
+  load    -> inMux.sel,
+  inMux.out -> resetMux.in1,
+  reset     -> resetMux.sel,
+  load  -> incOr.in1,
+  reset -> incOr.in2,
+  1         -> incMux.in1[1],
+  incOr.out -> incMux.sel,
+  resetMux.out -> incAdd.in1,
+  incMux.out   -> incAdd.in2,
+  incAdd.out -> reg.in,
+  1          -> reg.load,
+  reg.out -> out;

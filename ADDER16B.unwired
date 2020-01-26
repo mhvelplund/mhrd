@@ -1,0 +1,15 @@
+spec: 16-Bit Adder Specification
+==========================
+
+Description:
+------------
+The ADDER4B is a 16-bit bus version of the FULLADDER. It has therefore two 16-bit input busses and one 16-bit output bus while the carry in and out bits stay.
+Check the appendix in the manual for binary notation of numbers and binary arithmetics.
+
+
+Interface Specification:
+------------------------
+Inputs: carryIn, in1[16], in2[16];
+Outputs: out[16], carryOut;
+completed: true
+custom: false

@@ -1,0 +1,14 @@
+spec: 16-Bit And Specification
+========================
+
+Description:
+------------
+The AND16B element is a bus version of the AND gate. It applies the And-operation to each pair of bits from both inputs.  
+
+
+Interface Specification:
+------------------------
+Inputs: in1[16], in2[16];
+Outputs: out[16];
+completed: true
+custom: false

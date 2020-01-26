@@ -1,0 +1,14 @@
+spec: 4-Bit Nand Specification
+========================
+
+Description:
+------------
+The NAND4B element is a bus version of the NAND gate. It applies the Nand-operation to each pair of bits from both inputs.  
+
+
+Interface Specification:
+------------------------
+Inputs: in1[4], in2[4];
+Outputs: out[4];
+completed: true
+custom: false

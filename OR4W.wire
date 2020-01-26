@@ -1,0 +1,30 @@
+Inputs: in[4];
+Outputs: out;
+
+// 1. specify the components you want to use here
+Parts:
+  not1 NOT,
+  not2 NOT,
+  not3 NOT,
+  not4 NOT,
+  and1 AND,
+  and2 AND,
+  and AND,
+  notout NOT;
+
+// 2. wire them up
+Wires: 
+  in[1] -> not1.in,
+  in[2] -> not2.in,
+  in[3] -> not3.in,
+  in[4] -> not4.in,
+
+  not1.out -> and1.in1,
+  not2.out -> and1.in2,
+  not3.out -> and2.in1,
+  not4.out -> and2.in2,
+
+  and1.out -> and.in1,
+  and2.out -> and.in2,
+  and.out -> notout.in,
+  notout.out -> out;

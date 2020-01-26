@@ -1,0 +1,33 @@
+Inputs: in1, in2, sel;
+Outputs: out;
+Parts:
+  nsel NOT,nin1 NOT,nin2 NOT,and1a AND,and2a AND,and3a AND,and4a AND,and1b AND,
+  and2b AND,and3b AND,and4b AND,or OR4W;
+Wires: 
+  sel -> nsel.in, in1 -> nin1.in, in2 -> nin2.in,
+  
+  nsel.out -> and1a.in1, 
+  in1 -> and1a.in2, 
+  and1a.out -> and1b.in1,
+  nin2.out -> and1b.in2,
+  
+  nsel.out -> and2a.in1, 
+  in1 -> and2a.in2,    
+  and2a.out -> and2b.in1,
+  in2 -> and2b.in2,
+  
+  sel -> and3a.in1,
+  nin1.out -> and3a.in2,
+  and3a.out -> and3b.in1,
+  in2 -> and3b.in2,
+  
+  sel -> and4a.in1,
+  in1 -> and4a.in2,
+  and4a.out -> and4b.in1,
+  in2 -> and4b.in2,
+
+  and1b.out -> or.in[1],
+  and2b.out -> or.in[2],
+  and3b.out -> or.in[3],
+  and4b.out -> or.in[4],  
+  or.out -> out;

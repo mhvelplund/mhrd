@@ -1,0 +1,26 @@
+Inputs: in, sel[2];
+Outputs: out1, out2, out3, out4;
+
+// 1. specify the components you want to use here
+Parts:
+  nsel1 NOT, nsel2 NOT,
+  s00 AND, s01 AND, s10 AND, s11 AND,
+  s1 AND, s2 AND, s3 AND, s4 AND;
+
+// 2. wire them up
+Wires: 
+  sel[1]    -> nsel1.in, sel[2]    -> nsel2.in,
+  nsel1.out -> s00.in1,  nsel2.out -> s00.in2, 
+  nsel1.out -> s01.in1,  sel[2]    -> s01.in2, 
+  sel[1]    -> s10.in1,  nsel2.out -> s10.in2, 
+  sel[1]    -> s11.in1,  sel[2]    -> s11.in2, 
+
+  s00.out -> s1.in1, in -> s1.in2,
+  s10.out -> s2.in1, in -> s2.in2,
+  s01.out -> s3.in1, in -> s3.in2,
+  s11.out -> s4.in1, in -> s4.in2,
+  
+  s1.out -> out1,
+  s2.out -> out2,
+  s3.out -> out3,
+  s4.out -> out4;

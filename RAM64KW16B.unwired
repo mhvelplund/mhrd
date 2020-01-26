@@ -1,0 +1,13 @@
+spec: 64k-Register 16-Bit RAM Specification
+=====================================
+
+Description:
+------------
+The RAM64KW16B is a random access memory with 65536 addressable registers and 16-bit bus width. In addition to a regular register, the RAM64KW16B can save and retrieve 65536 different values, which can be addressed via the address input bus.
+
+Interface Specification:
+------------------------
+Inputs: in[16], load, address[16];
+Outputs: out[16];
+completed: true
+custom: false

@@ -1,0 +1,33 @@
+spec: Nand Specification
+==================
+
+Description:
+------------
+The NAND gate (short for Not-And) has two inputs and one output. If both inputs are 1, the output is 0. Otherwise the output is 1. 
+The NAND gate is the most basic element. It can be used to build _all_ other elements.
+
+
+Interface Specification:
+------------------------
+Inputs: in1, in2;
+Outputs: out;
+
+
+Graphical Representation:
+-------------------------
+       ______
+-in1--|      |
+      | NAND |--out-
+-in2--|______|
+
+
+Truth Table:
+------------
+ in1 | in2 || out
+ ----------------
+ 0   | 0   || 1
+ 0   | 1   || 1
+ 1   | 0   || 1
+ 1   | 1   || 0
+completed: true
+custom: false

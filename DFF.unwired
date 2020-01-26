@@ -1,0 +1,36 @@
+spec: D-Flip-Flop Specification
+=========================
+
+Description:
+------------
+The DFF element saves the value it receives on its input and outputs that value one clock cycle later. Its behavior can be described as out(t)=in(t-1).
+The property to maintain a state across a clock cycle makes the DFF element the base of all memory elements.
+Check out the the manual chapter about sequential logic.
+
+Interface Specification:
+------------------------
+Inputs: in;
+Outputs: out;
+
+
+Graphical Representation:
+-------------------------
+      _____
+     |     |
+-in--| DFF |--out-
+     |_____|
+
+
+Example:
+--------
+ in  || out
+ ----------
+ 0   || 0
+ 1   || 0
+ 1   || 1
+ 0   || 1
+ 0   || 0
+ 1   || 0
+ 1   || 1
+completed: true
+custom: false

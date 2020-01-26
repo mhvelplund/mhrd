@@ -1,0 +1,28 @@
+Inputs: in[16], load, address[2];
+Outputs: out[16];
+
+Parts:
+  ld DEMUX4W,
+  reg1 REGISTER16B,
+  reg2 REGISTER16B,
+  reg3 REGISTER16B,
+  reg4 REGISTER16B,
+  select MUX4W16B;
+
+Wires:
+  address  -> ld.sel,
+  load     -> ld.in,
+  in       -> reg1.in,
+  ld.out1  -> reg1.load,
+  reg1.out -> select.in1,
+  in       -> reg2.in,
+  ld.out2  -> reg2.load,
+  reg2.out -> select.in2,
+  in       -> reg3.in,
+  ld.out3  -> reg3.load,
+  reg3.out -> select.in3,
+  in       -> reg4.in,
+  ld.out4  -> reg4.load,
+  reg4.out -> select.in4,
+  address  -> select.sel,
+  select.out -> out;

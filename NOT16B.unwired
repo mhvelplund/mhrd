@@ -1,0 +1,14 @@
+spec: 16-Bit Not Specification
+========================
+
+Description:
+------------
+The NOT16B element is a bus version of the NOT gate. It applies the Not-operation to every bit in the bus.  
+
+
+Interface Specification:
+------------------------
+Inputs: in[16];
+Outputs: out[16];
+completed: true
+custom: false

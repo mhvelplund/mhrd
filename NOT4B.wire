@@ -1,0 +1,20 @@
+Inputs: in[4];
+Outputs: out[4];
+
+// 1. specify the components you want to use here
+Parts:
+  n1 NOT,
+  n2 NOT,
+  n3 NOT,
+  n4 NOT;
+
+// 2. wire them up
+Wires: 
+  in[1] -> n1.in,
+  in[2] -> n2.in,
+  in[3] -> n3.in,
+  in[4] -> n4.in,
+  n1.out -> out[1],
+  n2.out -> out[2],
+  n3.out -> out[3],
+  n4.out -> out[4];

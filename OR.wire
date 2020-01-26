@@ -1,0 +1,16 @@
+Inputs: in1, in2;
+Outputs: out;
+
+// 1. specify the components you want to use here
+Parts: 
+  n1 NOT,
+  n2 NOT,
+  na NAND;
+
+// 2. wire them up
+Wires: 
+  in1 -> n1.in,
+  in2 -> n2.in,
+  n1.out -> na.in1,
+  n2.out -> na.in2,
+  na.out -> out;
